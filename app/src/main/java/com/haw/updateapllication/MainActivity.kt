@@ -43,11 +43,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val remoteConfig = RemoteConfig()
-
         setContent {
             LaunchedEffect(key1 = Unit) {
-                isUpdateApp = remoteConfig.getUpdateApp()
+                isUpdateApp = RemoteConfig.getUpdateApp()
             }
 
             UpdateAppFirebaseTheme {

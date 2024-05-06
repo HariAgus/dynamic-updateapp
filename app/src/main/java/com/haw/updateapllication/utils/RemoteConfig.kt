@@ -12,9 +12,12 @@ import com.google.firebase.remoteconfig.remoteConfig
 import com.google.firebase.remoteconfig.remoteConfigSettings
 import com.haw.updateapllication.R
 
-class RemoteConfig {
+object RemoteConfig {
 
-    private var remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
+    private val TAG = RemoteConfig::class.java.simpleName
+    private const val VERSION_APP = "version_app"
+
+    private val remoteConfig: FirebaseRemoteConfig by lazy { Firebase.remoteConfig }
 
     init {
         val configSettings = remoteConfigSettings {
@@ -35,11 +38,6 @@ class RemoteConfig {
 
     fun getUpdateApp(): Boolean {
         return remoteConfig[VERSION_APP].asDouble() > BuildConfig.VERSION_NAME.toDouble()
-    }
-
-    companion object {
-        private val TAG = RemoteConfig::class.java.simpleName
-        private const val VERSION_APP = "version_app"
     }
 
 }
