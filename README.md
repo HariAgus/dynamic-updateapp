@@ -1,7 +1,5 @@
 # Dynamic Update App 
 
-<img src="https://r2.easyimg.io/07oaoxpow/banner_update_application.png"/>
-
 Sample application to check whether the application has updates or not, using firebase Remote Config
 
 You can also read my article on medium :
